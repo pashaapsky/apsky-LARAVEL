@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
+        <a class="navbar-brand" href="{{ route('home') }}">
             APSKY <span class="text-danger">LARAVEL</span>
         </a>
 
@@ -12,7 +12,7 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
+                    <a class="nav-link" href="{{ route('user-posts') }}">{{ __('My posts') }}</a>
                 </li>
 
                 <li class="nav-item">
@@ -20,7 +20,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">{{ __('Create Post') }}</a>
+                    <a class="nav-link" href="{{ route('post-create') }}">{{ __('Create Post') }}</a>
                 </li>
 
                 <li class="nav-item">
@@ -62,4 +62,6 @@
             </ul>
         </div>
     </div>
+
+    @include('layouts.notifications.flash_messages')
 </nav>
